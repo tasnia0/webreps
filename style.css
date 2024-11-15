@@ -1,0 +1,16 @@
+@keyframes flickerGlow {
+    0% {
+      text-shadow: 0 0 5px #e8d047, 0 0 10px #e8d047, 0 0 20px #e8d047;
+    }
+    50% {
+      text-shadow: 0 0 10px #e8d047, 0 0 20px #e8d047, 0 0 30px #e8d047;
+    }
+    100% {
+      text-shadow: 0 0 5px #e8d047, 0 0 10px #e8d047, 0 0 20px #e8d047;
+    }
+  }
+  
+  h1 {
+    animation: flickerGlow 1.5s infinite alternate;
+  }
+  
