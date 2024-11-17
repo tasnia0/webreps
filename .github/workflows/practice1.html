@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runnable IDE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 10px;
+        }
+
+        .editor-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .editor {
+            flex: 1;
+            min-width: 280px; /* Ensures editors don't get too small */
+            max-width: 48%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f5f5f5;
+            padding: 10px;
+        }
+
+        .editor h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .editor textarea {
+            width: 100%;
+            height: 200px;
+            border: none;
+            font-family: monospace;
+            font-size: 14px;
+            padding: 10px;
+            resize: vertical;
+        }
+
+        #output-container {
+            flex: 1;
+            height: 40%;
+            border-top: 2px solid #ccc;
+            margin-top: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .run-button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            align-self: center;
+            font-size: 16px;
+        }
+
+        .run-button:hover {
+            background: #0056b3;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .editor-container {
+                flex-direction: column;
+            }
+
+            .editor {
+                max-width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .run-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="editor-container">
+            <div class="editor">
+                <h3>HTML</h3>
+                <textarea id="html-editor"><!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+</body>
+</html></textarea>
+            </div>
+            <div class="editor">
+                <h3>CSS</h3>
+                <textarea id="css-editor">body { background-color: #f0f8ff; }</textarea>
+            </div>
+            
+            <div class="editor">
+                <h3>JavaScript</h3>
+                <textarea id="js-editor">console.log("Hello from JS!");</textarea>
+            </div>
+        </div>
+        <button class="run-button" onclick="runCode()">Run Code</button>
+        <div id="output-container">
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Initialize CodeMirror editors
+        const htmlEditor = CodeMirror.fromTextArea(document.getElementById('html-editor'), {
+            mode: 'htmlmixed',
+            lineNumbers: true,
+        });
+        const cssEditor = CodeMirror.fromTextArea(document.getElementById('css-editor'), {
+            mode: 'css',
+            lineNumbers: true,
+        });
+        const jsEditor = CodeMirror.fromTextArea(document.getElementById('js-editor'), {
+            mode: 'javascript',
+            lineNumbers: true,
+        });
+
+        // Function to run the code
+        function runCode() {
+            const htmlCode = htmlEditor.getValue();
+            const cssCode = `<style>${cssEditor.getValue()}</style>`;
+            const jsCode = `<script>${jsEditor.getValue()}<\/script>`;
+
+            const outputFrame = document.getElementById('output');
+            const outputDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+            outputDoc.open();
+            outputDoc.write(htmlCode + cssCode + jsCode);
+            outputDoc.close();
+        }
+    </script>
+</body>
+</html>
