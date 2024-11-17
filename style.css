@@ -6,11 +6,11 @@
       text-shadow: 0 0 10px #e8d047, 0 0 20px #e8d047, 0 0 30px #e8d047;
     }
     100% {
-      text-shadow: 0 0 5px #e8d047, 0 0 10px #e8d047, 0 0 20px #e8d047;
+      text-shadow: 0 0 5px #e7e5d7, 0 0 10px #e7e5d7, 0 0 20px #e7e5d7;
     }
   }
   
-  h1 {
+  .mainh1 {
     animation: flickerGlow 1.5s infinite alternate;
   }
-  
+

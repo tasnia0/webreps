@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
+    <meta charset ="utf-8">
+    <title>Intro to HTML & CSS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@800..900&display=swap" rel="stylesheet">
@@ -18,7 +20,7 @@
 }
 
 .menu a {
-  background-color: #e1bae1;
+  background-color: #bde5e9;
   padding: 8px;
   margin-top: 7px;
   display: block;
@@ -33,7 +35,7 @@
 }
 
 .right {
-  background-color: #e1bae1;
+  background-color: #bde5e9;
   float: left;
   width: 20%;
   padding: 15px;
@@ -49,15 +51,37 @@
 }
 </style>
 </head>
-<body style="font-family:Verdana;color:#aaaaaa;">
+<body style="font-family:'Courier New', Courier, monospace;font-weight: 900; color:#000000;background-color: #f7eeee;">
 
-<div style="background-color:#000000;padding:15px;text-align:center;">
-  <h1 style="Font-family: Doto; color:rgb(6, 220, 95);">Intro to HTML & CSS</h1>
+<div style="background-color:#070707;padding:15px;text-align:center;margin-bottom: 5px;Font-family: Doto; color:rgb(6, 220, 95)">
+  <h1 class=mainh1>Intro to HTML & CSS</h1>
 </div>
 
 <div style="overflow:auto">
   <div class="menu">
-    <a href="#">Vocabulary</a>
+    <style>
+      a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+      background-color: #f0f8ff;
+      color: #1e3799;
+      transition: all 0.3s;
+    }
+
+    a:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 8px rgb(69, 68, 68);
+      background-color: #22a6b3;
+      color: #ffffff;
+    }
+  </style>
+    </style>
+    <a href="vocabulary.html">Vocabulary</a>
     <a href="#">HTML Fundamentals</a>
     <a href="#">CSS Fundamentals</a>
     <a href="#">Quizzes</a>
@@ -74,7 +98,7 @@
   </div>
 </div>
 
-<div style="background-color:#e1bae1;text-align:center;padding:10px;margin-top:7px;"> Created by Tasnia Monir</div>
+<div style="background-color:#a1e4df;text-align:center;padding:10px;margin-top:7px;"> Created by Tasnia Monir</div>
 
 </body>
 </html>
