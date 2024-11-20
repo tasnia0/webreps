@@ -11,90 +11,113 @@
 <style>
 * {
   box-sizing: border-box;
+  
+
 }
 
 .menu {
   float: left;
   width: 20%;
   text-align: center;
+  
+ 
 }
 
 .menu a {
-  background-color: #bde5e9;
+  border-style: solid;
+  background-color: #dbeaec;
   padding: 8px;
   margin-top: 7px;
   display: block;
   width: 100%;
   color: black;
+  
 }
 
 .main {
   float: left;
   width: 60%;
   padding: 0 20px;
+  
+  
+
 }
 
 .right {
-  background-color: #bde5e9;
+  background-color: #e9e0ee;
   float: left;
   width: 20%;
   padding: 15px;
-  margin-top: 7px;
-  text-align: center;
+  border-style: solid;
+  border-radius: 8px;
+ 
+  
+
+  
 }
 
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .menu, .main, .right {
     width: 100%;
+    justify-content: center;
   }
 }
 </style>
 </head>
-<body style="font-family:'Courier New', Courier, monospace;font-weight: 900; color:#000000;background-color: #f7eeee;">
+<body style="font-family:'Courier New', Courier, monospace;font-weight: 500; color:#000000;background-color: #f7eeee;">
 
-<div style="background-color:#070707;padding:15px;text-align:center;margin-bottom: 5px;Font-family: Doto; color:rgb(6, 220, 95)">
+<div style="background-color:#ecddf6;padding:15px;text-align:center;margin-bottom: 5px;Font-family: Doto; color:rgb(6, 220, 95)">
   <h1 class=mainh1>Intro to HTML & CSS</h1>
 </div>
 
-<div style="overflow:auto">
+<div style="overflow:auto;">
   <div class="menu">
     <style>
       a {
+      
       text-decoration: none;
       display: inline-block;
       padding: 10px 20px;
       border-radius: 10px;
-      margin-bottom: 12px;
-      transform: translateY(-5px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-      background-color: #f0f8ff;
-      color: #1e3799;
+      margin-bottom: 5px;
+      transform: translateY(-3px);
+      
+      background-color: #abc3d8;
+   
+      color: #79dfe6;
       transition: all 0.3s;
+      
+      
     }
 
     a:hover {
       transform: translateY(-8px);
       box-shadow: 0 6px 8px rgb(69, 68, 68);
-      background-color: #22a6b3;
+      background-color: #3c7f84;
       color: #ffffff;
     }
   </style>
     </style>
     <a href="vocabulary.html">Vocabulary</a>
     <a href="practice1.html">HTML Fundamentals</a>
-    <a href="#">CSS Fundamentals</a>
+    <a href="learncss.html">CSS Fundamentals</a>
     <a href="#">Quizzes</a>
   </div>
 
   <div class="main">
-    <h2>Let's Learn to code!</h2>
-    <p>Building a website can seem intimidating at first, but with enough practice, anyone can do it!</p>
+    <h2 style="color:rgb(155, 162, 155);">Intro to HTML & CSS: Lesson 1</h2>
+    <p>Building a website might seem intimidating at first; but after this lesson, you will be able to create your own web page in just one day! 
+    </p>
+    <p>Websites are made using programming languages called HTML, CSS, and Java Script. They work together to create websites that users are able to interact with. 
+      There's a lot you can do with just HTML and CSS alone!</p>
+      <p>By the end of this lesson, you will be able to define programming terminology, structure a basic html document,and apply CSS styling to customize html elements. 
+        You will have the tools you need to get started on your first project!  </p>
   </div>
 
   <div class="right">
-    <h2>About</h2>
-    <p>Alright, you get the idea! Let's get started!</p>
+    <h2 style="color:rgb(155, 162, 155);">Getting Started</h2>
+    <p>You can use the links in the menu to get started! Each lesson has an editor built-in so you can start coding without the hassle of downloading an application or creating an account.</p>
   </div>
 </div>
 
