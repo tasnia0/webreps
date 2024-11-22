@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Fundamentals</title>
+    <title>CSS Fundamentals</title>
     <link rel="stylesheet" href="style.css">
     <style>
         * {
@@ -104,22 +104,21 @@
 </head>
 <body>
     <header style="background: #030b14; color: white; padding: 10px; text-align: center;">
-        <h1>HTML Fundamentals</h1>
+        <h1>CSS Fundamentals</h1>
     </header>
 
     <!-- IDE 1 -->
-    <h4 style="margin:2%; padding:2%; text-align:center;background-color: rgb(255, 208, 0);border-radius: 10px;">HTML Skeleton</h4>
+    <h4 style="margin:2%; padding:2%; text-align:center;background-color: rgb(255, 208, 0);border-radius: 10px;">Referencing CSS </h4>
     <div style= "margin:2%;padding:3%;background-color: rgba(248, 217, 16, 0.604); border-radius: 10px;">
-    <p >HTML is made up of keywords that tell the web-browser the content or <i><b>elements</b></i> you want to display. These key words are called <i><b>tags</b></i> and are used to reference the different elements of a website.
+    <p>CSS stands for Cascading Style Sheet; it is a programming language that is used to design how web pages look.
+    We can use CSS to change fonts, text color, backgrounds, and more!
     <br></br>
-    The type of elements we will be learning about include:
+    We can apply CSS styling to an HTML file by using it directly within the desired HTML file; but usually,
+    it is written in a separate .css file and referenced as a link within the head tags of an HTML file:
     <ul style="margin-left: 5%;">
         <br>
-        <li>Headings</li>
-        <li>Paragraphs</li>
-        <li>Ordered Lists</li>
-        <li>Numbered Lists</li>
-        <li>Images</li>
+        <li><mark>&lt;link rel="stylesheet" type="text/css" href="style.css"&gt;</mark></li>
+       
         
 
     </ul>
@@ -136,6 +135,7 @@
 <head>
     <meta charset="utf-8">
     <title>Browser Tab Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">.
 </head>
 <body>
     <!--This is a comment-->
@@ -161,7 +161,97 @@ body {
     </div>
 
     <!-- IDE 2 -->
-    <h4 style="margin:2%; padding:2%; text-align:center;background-color: rgb(255, 208, 0);border-radius: 10px;">Headings</h4>
+    <h4 style="margin:2%; padding:2%; text-align:center;background-color: rgb(255, 208, 0);border-radius: 10px;">Selectors and Declarations</h4>
+    <div style= "margin:2%;padding:3%;background-color: rgba(248, 217, 16, 0.604); border-radius: 10px;">
+        <p>Selectors allow us to target specific HTML elements and apply styling to them. There are several kinds of selectors; we will be starting with element selectors and class selectors. 
+            <br></br>
+            <ul style="margin-left:5% ">
+
+            <li> <strong>Element selectors</strong> target every single element that is of the same element type that have the same tags.</li><br><li> They can be used by referencing the element type followed by curly brackets that contain <strong><em>declarations.</em></strong></li>
+            <br>
+            <li style ="margin-left:8%"><strong>Example:</strong> <br><br>
+                <mark>p{<br>
+                    <br>
+                    font-family: sans-serif;
+                    <br>
+                    <br>
+                    font-size: 16 px
+                    <br>
+                    <br>
+                }</mark><br><br>
+            <em>In the example above, p is the element selector that will apply a change according to the declarations inside of the brackets</em></li>
+            <br>
+            <li>Declarations are written inside of a selector and provide information about the <em>type</em> of styling or <strong><em>property</em></strong> 
+                that will be applied; followed by additional information about the property or <em> <strong>value</strong></em> associated with the type of styling
+            </li><br>
+            <li style=" margin-left: 5%"><strong>Example:</strong><br>
+               <br>
+                <mark> .abc {<br><br>
+                     color: pink;<br><br>
+                 }</mark>
+                 <br><br>
+                 <em>In the example above, color is a CSS property, and pink is the value. Can you guess what the properties and values are in the element selectors example? </em>
+                 <br><br>
+                 <head>
+                    <style>
+                    .exp{visibility: hidden;}
+                    </style>
+                    </head>
+                    <body>
+                    <button onclick="unhide()">Show Answer</button>
+                    <br><br>
+                    <div class="exp">
+                        <p class="and">1. font-family is a property of p and sans-serif is a value of font-family <br><br>
+                        2. font-size is another property of p and 16px is the value of font-size </p>
+                    </div>
+                    </body>
+                    <br>
+                   <script>
+                            function unhide() {
+            var hid = document.getElementsByClassName("exp");
+            // Emulates jQuery $(element).is(':hidden');
+            if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+                hid[0].style.visibility = "visible";
+            }
+            
+        }
+                        </script>
+                        
+
+                </li>
+                
+            
+            <br>
+            <li><strong>Class selectors</strong> target every single element that belongs to the same class, these elements can be identified by their class name. They follow a similar format to element selectors 
+                but they can apply styling to different element types by
+                referencing the class name or the shared <em>attribute</em>. This means that any element that has the same class name can be changed at the same time.  </li>
+                <br>
+
+                <li style="margin-left:8%"><strong>Example: </strong> <br><br>
+                    HTML: <br><br><mark>
+                    &lt;h1&gt;Title&lt;h1&gt; <br><br>
+                    &lt;h1 class="abc" &gt;Title&lt;h1&gt;</mark> <br>
+                    <br><br>
+    
+                    <br>CSS: <br><br>
+                   <mark> .abc {<br><br>
+                        color: pink<br><br>
+                    }</mark>
+                    <br>
+    
+                    <br>
+                    
+                    <em>In the example above, we have two elements of the same type. <br><br> The h1 element that belongs to class abc is referenced in css with a dot followed by the class name. Any declarations made inside of the brackets will be applied to all elements with the same class name.</em>
+    
+                </li>
+               
+            </ul>
+           <br>
+            
+
+        </p>
+    
+        </div>
     <div class="container">
         <div class="editor-container">
             <div class="editor">
@@ -172,14 +262,18 @@ body {
 <head>
     <meta charset="utf-8">
     <title>Browser Tab Title</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
+    <h1>Title</h1>
+    <h1 class="abc">Title</h1>
+
+    <h2> Title 2</h2>
+    <h2 class ="def">Title 2</h2>
+
+    <h3 class ="xyz">Title 3</h3>
+    <p>this is a paragraph</p>
+    <p class="xyz"> this is another paragraph</p>
 </body>
 </html>
                 </textarea>
@@ -187,8 +281,36 @@ body {
             <div class="editor">
                 <label for="css-code-2">CSS Editor</label>
                 <textarea id="css-code-2">
-body {
-    background-color: #f0f8ff;
+
+/*Apply change to all elements that belong to class abc*/
+
+.abc{
+   /*change text color to pink*/
+    color: pink;
+}
+/***************************************************************/
+
+/*change all h2 elements to red text*/
+h2{
+    color:red;
+}
+/*change elements of class "def" to courier new font*/
+.def{
+    font-family: Courier;
+    
+}
+/**************************************************************/
+
+/*Apply changes to all elements of class "xyz"*/
+.xyz{
+    /*change text color to green*/
+    color: green;
+
+    /*change font*/
+    font-family: Comic Sans MS;
+
+    /*change font size*/
+    font-size: 32px;
 }
                 </textarea>
             </div>
@@ -199,18 +321,40 @@ body {
         </div>
     </div>
 <!--IDE 3-->
-<h4 style="margin:2%; padding:2%; text-align:center;background-color: rgb(255, 208, 0);border-radius: 10px;">Lists</h4>
+<h4 style="margin:2%; padding:2%; text-align:center;background-color: rgb(255, 208, 0);border-radius: 10px;">Resizing Images</h4>
 <!--Lesson snippet-->
 <div style= "margin:2%;padding:3%;background-color: rgba(248, 217, 16, 0.604); border-radius: 10px;">
-    <p>We can display contents as lists by using the list tags.
+    <p>We can resize images inside a CSS file by using img as a selector while applying height and width properties and values.
+        <br> To keep your image relative to screen size, we can assign the value, 100%, to the width property:<br><br>
+        <strong>Example:</strong><br><br>
+        <mark>img{<br><br>
+            width:100% <br><br>
+            }
+
+        </mark>
         <br></br>
-        <ul style="margin-left:5% ">
-        <li>We use <mark>&lt;ul&gt;&lt;/ul&gt;</mark> tags to create a bulleted list or also refered to as an 'unordered list' 
-        </li>
-        <br>
-        <li>We use <mark>&lt;ol&gt;&lt;/ol&gt;</mark> tags to create a numbered list </li>
-        <br>
-        <li>We use the <mark>&lt;li&gt;&lt;/li&gt;</mark> inside of a list tag to create a list item </li>
+        Other ways we can achieve this include:<br><br>
+        <ul style="margin-left: 8% ">
+            <li><mark>img{
+                <br><br>
+                max-width:100%; <br><br>
+                height:auto;<br><br>
+            }
+                </mark> 
+            </li>
+            <br>
+            <li><mark>
+                img{<br><br>
+                    width: insert desired pixel width here; 
+                    <br><br>
+                    height:auto; <br><br>
+                }
+            </mark>
+
+            </li>
+        </ul>
+        <br>It is best practice to set the height value to <mark>auto</mark> so that the image we are using stays proportionate to the original.
+       
     </p>
 
     </div>
@@ -227,18 +371,8 @@ body {
 <title>Browser Tab Title</title>
 </head>
 <body>
-<h1>Lists</h1>
-<ul>
-    <li>item 1</li>
-    <li>item 2</li>
-    <li>item 3</li>
-</ul>
-<ol>
-    <li>item 1</li>
-    <li>item 2</li>
-    <li>item 3</li>
-</ol>
-
+   
+    <img src="https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg">
 </body>
 </html>
             </textarea>
@@ -246,8 +380,8 @@ body {
         <div class="editor">
             <label for="css-code-3">CSS Editor</label>
             <textarea id="css-code-3">
-body {
-background-color: #f0f8ff;
+img{
+    width:100%;
 }
             </textarea>
         </div>
@@ -257,163 +391,6 @@ background-color: #f0f8ff;
         <iframe id="output-3"></iframe>
     </div>
 </div>
-
-<!--Editor 4-->
-<h4 style="margin:2%; padding:2%; text-align:center;background-color: rgb(255, 208, 0);border-radius: 10px;">Inline Tags</h4>
-
-<div style= "margin:2%;padding:3%;background-color: rgba(248, 217, 16, 0.604); border-radius: 10px;">
-    <p> Inline elements are tags that can be used within other specific elements. They allow you to choose which part of the element you want to apply a change to.
-    
-    </p>
-        <br>
-    <ul style="margin-left:5%;">
-        <li>We can use <mark>&lt;em&gt;&lt;/em&gt;</mark> to italicize or <em>emphasize</em> a word
-        </li>
-        <br>
-        <li>We can use <mark>&lt;strong&gt;&lt;/strong&gt;</mark> to make a word <strong>bold</strong>
-        </li>
-
-    </ul>
-</div>
-<div class="container">
-    <div class="editor-container">
-        <div class="editor">
-            <label for="html-code-4">HTML Editor</label>
-            <textarea id="html-code-4">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Browser Tab Title</title>
-</head>
-<body>
-<h1>Inline tags</h1>
-<p>
-    <!-- This is how we italicize a word-->
-    <em>italic</em>
-
-    <br></br>
-    <!--This is how we make a word bold-->
-    <strong>bold</strong>
-    
-</p>
-
-
-      
-    
-
-</body>
-</html>
-            </textarea>
-        </div>
-        <div class="editor">
-            <label for="css-code-4">CSS Editor</label>
-            <textarea id="css-code-4">
-body {
-background-color: #f0f8ff;
-}
-            </textarea>
-        </div>
-        <button class="run-button" onclick="runCode('html-code-4', 'css-code-4', 'output-4')">Run Code</button>
-    </div>
-    <div id="preview-container">
-        <iframe id="output-4"></iframe>
-    </div>
-</div>
-<!-- editor 5-->
-
-<h4 style="margin:2%; padding:2%; text-align:center;background-color: rgb(255, 208, 0);border-radius: 10px;">Attributes: Images and Hyperlinks</h4>
-
-<div style= "margin:2%;padding:3%;background-color: rgba(248, 217, 16, 0.604); border-radius: 10px;">
-    <p> Attributes are additional information inside of an opening tag that change the way an element looks or behaves. 
-        There are different types of attributes but for now, we will be focusing on the source attribute and href attribute:
-    
-    </p>
-        <br>
-    <ul style="margin-left: 5%;">
-        <li>The source attribute,<mark>src</mark>, is used to reference the URL location of a file:
-            <br>
-            <br>
-            <mark>&lt;img src="link"&gt;</mark>
-            <br>
-            <br>
-        <li>The source attribute can also be used to reference a local image file in your computer:
-           <br>
-           <br>
-            <mark>&lt;img src="image.png"&gt;</mark>
-        </li>
-       
-        
-        </li>
-        <br>
-        <li>The Hypertext Reference link, <mark>href</mark> is used to display a link as text:
-            <br>
-            <br>
-            <mark>&lt;a href=link&gt;insert your text here&lt;/a&gt;</mark>
-
-        </li>
-        <br>
-        
-
-
-    </ul>
-</div>
-<div class="container">
-    <div class="editor-container">
-        <div class="editor">
-            <label for="html-code-5">HTML Editor</label>
-            <textarea id="html-code-5">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Browser Tab Title</title>
-</head>
-<body>
-<h1>Attributes</h1>
-<p>
-
-    <!-- This is how we add an image-->
-<!--local file:
-
-    <img src="image.png">
-
--->
-    <!--url-->
-    <img src="https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg">
-
-    <br></br>
-    <!--This is how we use href-->
-    
-    <a href="https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg">Sunflower image</a>
-    
-</p>
-
-
-      
-    
-
-</body>
-</html>
-            </textarea>
-        </div>
-        <div class="editor">
-            <label for="css-code-5">CSS Editor</label>
-            <textarea id="css-code-5">
-body {
-background-color: #f0f8ff;
-}
-            </textarea>
-        </div>
-        <button class="run-button" onclick="runCode('html-code-5', 'css-code-5', 'output-5')">Run Code</button>
-    </div>
-    <div id="preview-container">
-        <iframe id="output-5"></iframe>
-    </div>
-</div>
-<!--Editor 6-->
-
-
 
     <script>
         function runCode(htmlId, cssId, outputId) {

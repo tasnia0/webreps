@@ -25,7 +25,7 @@
 pre{
   margin:1%;
 }
-mark {
+mark{
   background-color: rgba(187, 146, 146, 0.5);
   border-radius: 6px;
   padding: 0.5%;
@@ -33,3 +33,6 @@ mark {
   height:100vh;
  
 }
+.exp{
+  visibility:hidden;
+ }
